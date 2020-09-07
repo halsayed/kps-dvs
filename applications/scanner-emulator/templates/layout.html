@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcode Scanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mobile.css') }}">
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+
+<!--
+========================================
+TITLE AND LEAD IN
+========================================
+-->
+
+<h2 class="center grey-text">Barcode Scanner Emulator</h2>
+<p class="center grey-text">Web app to emulate barcode scanner (requires camera access)</p>
+
+<!--
+========================================
+STAGE
+========================================
+-->
+
+<div class="stage container z-depth-3">
+
+    <!--
+    ========================================
+    LAYER 1
+    ========================================
+    -->
+
+    {#  <div class="layer layer-1 grey white-text">#}
+    {#    <i class="material-icons left">menu</i>#}
+    {#  </div>#}
+
+    <!--
+    ========================================
+    LAYER 2
+    ========================================
+    -->
+
+
+    {% block body %}{% endblock %}
+
+</div>
+
+{% block vue_app %}
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.6/hammer.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

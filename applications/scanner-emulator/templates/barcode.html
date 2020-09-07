@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div id="app" class="layer layer-2 z-depth-1">
+        <h3 class="center">{{ title }}</h3>
+        <form method="post" class="col s12">
+            <div class="center item-padding">
+
+                <div class="center">
+                    <div class="left">
+                        <i class="material-icons prefix">qr_code</i>
+                    </div>
+                    <h5>barcode</h5>
+                </div>
+                <div class="row">
+                    <input id="barcode" name="barcode" type="text" class="validate">
+                </div>
+
+            </div>
+            <div class="center item-padding">
+                <button type="submit" class="waves-effect waves-light btn-large full-width">
+                    <div class="left">
+                        <i class="material-icons no-right-padding">done</i>
+                    </div>
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block vue_app %}
+    {% if vue_file %}
+        <script src="{{ url_for('static', filename=vue_file) }}"></script>
+        <!-- Mount App -->
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
+    {% endif %}
+{% endblock %}

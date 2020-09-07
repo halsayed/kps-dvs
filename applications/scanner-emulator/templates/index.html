@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div id="app" class="layer layer-2 z-depth-1">
+        <p class="center">{{ message }}</p>
+        <p class="center">[[ message ]]</p>
+        <div class="center item-padding">
+            <a class="waves-effect waves-light btn-large full-width" href="{{ url_for('checkin') }}">
+                <div class="left">
+                    <i class="material-icons no-right-padding">arrow_forward</i>
+                    <i class="material-icons no-left-padding">panorama_fish_eye</i>
+                </div>
+                Checkin Item
+            </a>
+        </div>
+        <div class="center item-padding">
+        <a class="waves-effect waves-light btn-large full-width" href="{{ url_for('checkout') }}">
+            <div class="left">
+                <i class="material-icons no-right-padding">arrow_back</i>
+                <i class="material-icons no-left-padding">panorama_fish_eye</i>
+            </div>
+            Checkout Item
+        </a>
+    </div>
+    </div>
+{% endblock %}
+
+{% block vue_app %}
+    {% if vue_file %}
+        <script src="{{ url_for('static', filename=vue_file) }}"></script>
+        <!-- Mount App -->
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
+    {% endif %}
+{% endblock %}
