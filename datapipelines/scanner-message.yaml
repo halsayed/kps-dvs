@@ -1,0 +1,19 @@
+kind: dataPipeline
+name: scanner-message
+project: barcode-tracker
+description: datapipeline to handle MQTT messages from scanner with local datastream output
+samplingIntervalMsec: 1000
+input:
+  categorySelectors:
+    sensor_type:
+    - barcode
+functions:
+- name: read_scanner_message
+  args:
+    buffer_after: "5"
+    buffer_before: "15"
+output:
+  localEdge:
+    type: Edge
+    service: RealTimeStreaming
+    endpointName: scanner-message
