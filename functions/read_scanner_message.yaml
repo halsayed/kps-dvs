@@ -1,0 +1,12 @@
+name: read_scanner_message
+kind: function
+project: barcode-tracker
+description: read a message from MQTT source emulating a barcode scanner with two operations, checkin and checkout an item.
+sourceCodePath: read_scanner_message.py
+language: python
+environment: python-env
+params:
+- name: buffer_after
+  type: integer
+- name: buffer_before
+  type: integer
