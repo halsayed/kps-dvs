@@ -13,7 +13,10 @@ def main(ctx, msg):
     current_time = f'{datetime.utcnow().isoformat(timespec="seconds")}+00:00'
     buffer_config = ctx.get_config()
 
-    message = {}
+    message = {'data': {
+        'operation': '',
+        'value': ''
+    }}
 
     # checkin operation
     if scanner_msg[:10] == '[checkin]-':
