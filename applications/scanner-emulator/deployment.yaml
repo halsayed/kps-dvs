@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: barcode-reader
-          image: hexadtech/barcode-reader-emulator:latest
+          image: hexadtech/scanner-emulator:latest
+          imagePullPolicy: Always
           ports:
             - name: flask-http
               containerPort: 5000

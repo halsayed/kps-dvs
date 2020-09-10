@@ -27,7 +27,8 @@ def checkin():
         req = request.form
         barcode = req.get('barcode', 'None')
         payload = {
-            'data': {'operation': 'checkin', 'value': barcode},
+            'operation': 'checkin',
+            'value': barcode,
             'location': Config.LOCATION
         }
         mqtt.send_message('checkin-barcode', json.dumps(payload))
@@ -42,7 +43,8 @@ def checkout():
         req = request.form
         barcode = req.get('barcode', 'None')
         payload = {
-            'data': {'operation': 'checkout', 'value': barcode},
+            'operation': 'checkout',
+            'value': barcode,
             'location': Config.LOCATION
         }
         mqtt.send_message('checkout-barcode', json.dumps(payload))

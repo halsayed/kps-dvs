@@ -1,5 +1,5 @@
 kind: application
-name: barcode-scanner-emulator
+name: scanner-emulator
 project: barcode-tracker
 description: "Generate MQTT message emulating a barcode scanner"
 dataIfcEndpoints: []
