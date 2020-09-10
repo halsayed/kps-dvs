@@ -8,3 +8,11 @@ This pipeline will handle scanner message received over MQTT sensor. Message is 
 
 `kps create -f scanner-message.yaml`
 
+
+
+**sqs-message**
+
+Pipeline for sending messages to AWS SQS
+
+`kps create -f sqs-message.yaml`
+

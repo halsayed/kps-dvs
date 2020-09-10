@@ -1,0 +1,7 @@
+name: sqs-message-format
+kind: function
+project: barcode-tracker
+description: Format the message from local datastream before sending to AWS SQS
+sourceCodePath: sqs-message-format.py
+language: python
+environment: python-env
