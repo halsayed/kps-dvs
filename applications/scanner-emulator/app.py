@@ -1,6 +1,7 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+import json
 import mqtt
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from config import Config
 
 
@@ -25,7 +26,11 @@ def checkin():
     if request.method == 'POST':
         req = request.form
         barcode = req.get('barcode', 'None')
-        mqtt.send_message('checkin-barcode', f'[checkin]-{barcode}')
+        payload = {
+            'data': {'operation': 'checkin', 'value': barcode},
+            'location': Config.LOCATION
+        }
+        mqtt.send_message('checkin-barcode', json.dumps(payload))
         return redirect(url_for('main'))
 
     return render_template('barcode.html', title='Checkin Item', vue_file='barcode.js')
@@ -36,7 +41,11 @@ def checkout():
     if request.method == 'POST':
         req = request.form
         barcode = req.get('barcode', 'None')
-        mqtt.send_message('checkout-barcode', f'[checkout]-{barcode}')
+        payload = {
+            'data': {'operation': 'checkout', 'value': barcode},
+            'location': Config.LOCATION
+        }
+        mqtt.send_message('checkout-barcode', json.dumps(payload))
         return redirect(url_for('main'))
 
     return render_template('barcode.html', title='Checkout Item', vue_file='barcode.js')
