@@ -1,0 +1,17 @@
+kind: dataPipeline
+name: sqs-message
+project: barcode-tracker
+description: SQS message pipeline
+input:
+  dataPipeline: scanner-message
+functions:
+- name: sqs-message-format
+  args: {}
+output:
+  publicCloud:
+    type: AWS
+    service: SQS
+    region: us-west-2
+    profile: aws-husain
+    endpointName: sqs-message
+
