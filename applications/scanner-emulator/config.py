@@ -10,9 +10,14 @@ class Config:
     MQTT_PORT = os.environ.get('MQTT_PORT', 1883)
     MQTT_READY = False
     LOCATION = os.environ.get('LOCATION', 'Undefined')
-    CLIENT_CERTIFICATE = os.environ.get('CLIENT_CERTIFICATE')
+    UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', './uploads')
+    ALLOWED_EXTENSIONS = {'zip'}
 
     LOG_LEVEL = os.environ.get('LOG_LEVEL', logging.INFO)
+
+    CA_CERT = ''
+    CLIENT_CERT = ''
+    CLIENT_KEY = ''
 
 
 # create logger

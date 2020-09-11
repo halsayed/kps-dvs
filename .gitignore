@@ -126,7 +126,3 @@ dmypy.json
 # PyCharm
 .idea/
 
-# Ignore sensor certificate
-CACertificate.crt
-certificate.crt
-privateKey.key
