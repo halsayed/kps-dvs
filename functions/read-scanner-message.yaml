@@ -1,8 +1,8 @@
-name: read_scanner_message
+name: read-scanner-message
 kind: function
 project: barcode-tracker
 description: read a message from MQTT source emulating a barcode scanner with two operations, checkin and checkout an item.
-sourceCodePath: read_scanner_message.py
+sourceCodePath: read-scanner-message.py
 language: python
 environment: python-env
 params:

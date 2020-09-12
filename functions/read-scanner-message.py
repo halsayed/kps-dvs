@@ -26,7 +26,7 @@ def main(ctx, msg):
         'buffer_after': int(buffer_config.get('buffer_after', 15)),
         'video_start_time': f'{video_start_time.isoformat(timespec="seconds")}+00:00',
         'video_end_time': f'{video_end_time.isoformat(timespec="seconds")}+00:00',
-        'data': scanner_msg.get('data')
+        'data': scanner_msg
     }
         
     return ctx.send(json.dumps(message).encode())
