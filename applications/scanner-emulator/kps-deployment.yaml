@@ -5,6 +5,6 @@ description: "Generate MQTT message emulating a barcode scanner"
 dataIfcEndpoints: []
 appYamlPath: deployment.yaml
 edges:
-- station1
+- station-01
 - station-02
 
