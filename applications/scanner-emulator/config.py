@@ -13,6 +13,8 @@ class Config:
     UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', './uploads')
     ALLOWED_EXTENSIONS = {'zip'}
 
+    RTSP_BUFFER_URL = os.environ.get('RTSP_BUFFER_URL', '')
+
     LOG_LEVEL = os.environ.get('LOG_LEVEL', logging.INFO)
 
     CA_CERT = ''

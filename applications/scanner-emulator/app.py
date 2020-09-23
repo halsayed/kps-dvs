@@ -56,7 +56,8 @@ def checkin():
         payload = {
             'operation': 'checkin',
             'value': barcode,
-            'location': Config.LOCATION
+            'location': Config.LOCATION,
+            'rtsp-buffer': Config.RTSP_BUFFER_URL
         }
         mqtt.send_message('checkin-barcode', json.dumps(payload))
         return redirect(url_for('main'))

@@ -6,5 +6,4 @@ dataIfcEndpoints: []
 appYamlPath: deployment.yaml
 edges:
 - station-01
-- station-02
 
