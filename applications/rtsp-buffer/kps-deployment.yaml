@@ -1,0 +1,9 @@
+kind: application
+name: rtsp-buffer
+project: barcode-tracker
+description: "RTSP buffer for video stream source"
+dataIfcEndpoints: []
+appYamlPath: deployment.yaml
+edges:
+- station-01
+
