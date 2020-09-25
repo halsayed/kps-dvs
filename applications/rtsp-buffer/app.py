@@ -20,6 +20,10 @@ def index():
     output_video_filename = f'{str(uuid.uuid4())}.mp4'
     output_video_dir = app.config['VIDEO_DIR']
 
+    # Set defualt values just in case no data on payload
+    start_time = default_start_time
+    end_time = default_end_time
+
     if request.method == 'POST':
         if request.values:
             start_time = request.values.get('start_time')
