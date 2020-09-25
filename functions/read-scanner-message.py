@@ -27,7 +27,8 @@ def main(ctx, msg):
         'video_start_time': f'{video_start_time.isoformat(timespec="seconds")}+00:00',
         'video_end_time': f'{video_end_time.isoformat(timespec="seconds")}+00:00',
         'operation': scanner_msg.get('operation'),
-        'value': scanner_msg.get('value')
+        'value': scanner_msg.get('value'),
+        'rtsp-buffer': scanner_msg.get('rtsp-buffer')
     }
     logging.info(f'message before sending: {message}')
         

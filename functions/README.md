@@ -4,7 +4,7 @@ use KPS cli to deploy the following functions:
 
 **read_scanner_message**
 
-`kps create -f read_scanner_message.yaml`
+`kps create -f read-scanner-message.yaml`
 
 
 **sqs-message-format**

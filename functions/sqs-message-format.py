@@ -8,5 +8,6 @@ def main(ctx, msg):
     logging.info('================ Local datastream Message ============================')
     logging.info(f'Data from stream: {message}')
     message['source_type'] = 'barcode_scanner'
+    del(message['rtsp-buffer'])
 
     return ctx.send(json.dumps(message).encode())
