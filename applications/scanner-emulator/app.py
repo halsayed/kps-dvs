@@ -59,7 +59,7 @@ def checkin():
             'location': Config.LOCATION,
             'rtsp-buffer': Config.RTSP_BUFFER_URL
         }
-        mqtt.send_message('checkin-barcode', json.dumps(payload))
+        mqtt.send_message(Config.MQTT_TOPIC, json.dumps(payload))
         return redirect(url_for('main'))
 
     return render_template('barcode.html', title='Checkin Item', vue_file='barcode.js')
@@ -76,7 +76,7 @@ def checkout():
             'location': Config.LOCATION,
             'rtsp-buffer': Config.RTSP_BUFFER_URL
         }
-        mqtt.send_message('checkout-barcode', json.dumps(payload))
+        mqtt.send_message(Config.MQTT_TOPIC, json.dumps(payload))
         return redirect(url_for('main'))
 
     return render_template('barcode.html', title='Checkout Item', vue_file='barcode.js')

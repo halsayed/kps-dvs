@@ -9,6 +9,7 @@ class Config:
     MQTT_HOST = os.environ.get('MQTT_HOST', 'localhost')
     MQTT_PORT = os.environ.get('MQTT_PORT', 1883)
     MQTT_READY = False
+    MQTT_TOPIC = os.environ.get('MQTT_TOPIC', 'barcode')
     LOCATION = os.environ.get('LOCATION', 'Undefined')
     UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', './uploads')
     ALLOWED_EXTENSIONS = {'zip'}
