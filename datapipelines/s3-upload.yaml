@@ -1,0 +1,16 @@
+kind: dataPipeline
+name: s3-upload
+project: barcode-tracker
+description: Upload video to S3
+input:
+  dataPipeline: scanner-message
+functions:
+- name: generate-video-clip
+  args: {}
+output:
+  publicCloud:
+    type: AWS
+    service: S3
+    region: us-west-2
+    profile: aws-husain
+    endpointName: s3-test123911

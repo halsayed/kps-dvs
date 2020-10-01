@@ -1,0 +1,7 @@
+name: generate-video-clip
+kind: function
+project: barcode-tracker
+description: Download video clip from RTSP buffer and pickle it
+sourceCodePath: generate-video-clip.py
+language: python
+environment: python-env
