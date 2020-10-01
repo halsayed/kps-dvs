@@ -3,10 +3,9 @@ from flask_bootstrap import Bootstrap
 from config import config
 from dynamo import list_all_records, read_stream_records
 from card_generator import CardGenerator
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 from threading import Lock
 import os
-import time
 
 app = Flask(__name__)
 app.config.from_object(config[os.environ.get('FLASK_CONFIG', 'default')])
