@@ -1,4 +1,4 @@
-###### kps-dvs
+# kps-dvs
 
 KPS-DVS is a demo application for distributed video surveillance based on Nutanix Karbon Platform Services. The challenge while working with such projects is the connectivity between the remote sites and the centralized DC or Cloud and the non standard API interfaces for NVRs (depending on the vendor).
 
