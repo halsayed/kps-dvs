@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Xi-IoT{% endblock %}
+
+{% block navbar %}
+    <div class="navbar navbar-fixed-top">
+        <!-- ... -->
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1 class="display-4">KPS Demo Dashboard</h1>
+        <p class="lead">Monitor all your service domains from a central dashboard</p>
+        <hr class="my-4">
+        <form class="form-inline d-flex justify-content-center md-form form-sm" method="get">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                   aria-label="Search" id="search" name="search" {% if search %}value="{{ search }}"{% endif %}>
+            <button class="btn btn-secondary mr-1" type="submit"><i class="fas fa-search"> </i> Search</button>
+            <button class="btn btn-secondary mr-1" type="button" onClick="window.location.replace(location.pathname);">
+                <i class="fas fa-times"> </i> Clear</button>
+
+        </form>
+
+    </div>
+
+    <div class="container">
+
+
+        <div class="row">
+            {% for location, cards in locations.items() %}
+                <div class="col-sm border bg-light">
+                    <div class="row card-header" style="margin-bottom: 1rem!important;">
+                        Source: {{ location }}
+                    </div>
+
+                    <div id="{{ location }}"></div>
+
+                    {{ cards|safe }}
+
+                </div>
+
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
